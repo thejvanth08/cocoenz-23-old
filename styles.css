@@ -1,0 +1,248 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  outline: none;
+  /* for custom cursor */
+  cursor: url("./custom-cursor.png"), auto;
+}
+
+/* to not disturb the wolf anime */
+.hero * {
+  box-sizing: content-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* the particles are diplayed in canvas
+   it will be present in seperate element which makes layout distrubed
+   to make it display on background -> make it as backward layer */
+.particles-js-canvas-el {
+  height: 100vh;
+  position: fixed;
+  /* don't set higher than 100 -> else it makes the fixed navbar & scrollup unclickable  */
+  z-index: 100;
+  /* this makes canvas to not to respond with cursor -> can't interact with particles elements
+  this makes users to interact with other elements */
+  pointer-events: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* CSS variables */
+:root {
+  --primary-color: #009df8;
+  --secondary-color: #daf3ff;
+  --bg-color: #070a0d;
+  --white-color: #fff;
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Dancing Script", cursive;
+  --title-font: "Mountains of Christmas", cursive;
+  --size: 16px;
+}
+
+/* Utility classes  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 26px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Other styles */
+/* For particles effect */
+
+/* General styles  */
+body {
+  background-color: var(--bg-color);
+  font-family: var(--primary-font);
+  color: var(--white-color);
+  overflow-x: hidden;
+  /* to make the particles to appear to entire page by sticking with viewport */
+  /* position: relative; */
+  /* min-height: 100vh; */
+}
+
+header {
+  padding: 20px 30px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* at topmost order */
+  z-index: 100;
+  /* width: 100vw; */
+}
+
+/* hiding links for mobile view */
+header .links {
+  width: 60vw;
+  height: 100vh;
+  background-color: #3d4756;
+  /* it must be fixed */
+  position: fixed;
+  top: -100%;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 1000;
+}
+
+.links a {
+  display: inline-block;
+  width: 100%;
+  padding: 30px 50px;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+.links a {
+  color: var(--secondary-color);
+  transition: all 0.2s;
+}
+
+.links a:hover {
+  color: var(--primary-color);
+  background-color: #070a0d77;
+  letter-spacing: 2px;
+}
+
+.links #menu-close {
+  margin-bottom: 2rem;
+  float: right;
+  margin: 30px 40px 50px 0;
+}
+
+/* to show the menu - specificity is important */
+.links.show-menu {
+  top: 0;
+}
+
+.logo-container *,
+.menu-container i {
+  color: var(--white-color);
+  font-size: 1.3rem;
+}
+
+.menu-container i {
+  font-size: 1.5rem;
+  /* add other effect */
+  cursor: pointer;
+}
+
+#menu-close i {
+  font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--secondary-font);
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-family: var(--title-font);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2rem;
+  padding-block: 4rem 1rem;
+}
+
+/* Main section */
+main {
+  height: 100vh;
+  padding: 0 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* for proper stack order */
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    hsl(210, 88%, 20%),
+    hsl(210, 70%, 58%)
+  );
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 100;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btn.register {
+  margin-top: 16rem;
+}
+
+/* About styles */
+
+.about {
+  background-color: purple;
+  height: 100px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+/* trailing effect */
+.cursor {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.effect {
+  height: 100%;
+  position: relative;
+}
