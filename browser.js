@@ -8,7 +8,7 @@ var cursoreffects = (function (e) {
         n,
         o = e && e.element,
         s = o || document.body,
-        h = ["❄️"],
+        h = ["⭐"],
         c = window.innerWidth,
         l = window.innerHeight,
         r = { x: c / 2, y: c / 2 },

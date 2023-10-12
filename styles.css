@@ -9,8 +9,7 @@
   margin: 0;
   text-decoration: none;
   outline: none;
-  /* for custom cursor */
-  cursor: url("./custom-cursor.png"), auto;
+  cursor: url("./star.png"), auto;
 }
 
 /* to not disturb the wolf anime */
@@ -35,6 +34,31 @@ html {
   pointer-events: none;
 }
 
+/* For custom cursor pointer */
+
+/* .cursor-pointer {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  cursor: url(attr(data-cursor)), auto;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s;
+  z-index: 9999;
+}
+.runner {
+  background-color: var(--highlight);
+}
+.chaser {
+  width: 5px;
+  height: 5px;
+  background: var(--primary-color);
+  box-shadow: 0 0 45px 5px rgba(255, 255, 255, 1);
+  transition: all 0.5s ease-in-out;
+} */
+
 .hide {
   display: none;
 }
@@ -49,6 +73,9 @@ html {
   --secondary-font: "Dancing Script", cursive;
   --title-font: "Mountains of Christmas", cursive;
   --size: 16px;
+  /* for cursor */
+  --med-grey: #ccc;
+  --highlight: #f9f871;
 }
 
 /* Utility classes  */
@@ -87,6 +114,7 @@ body {
   /* to make the particles to appear to entire page by sticking with viewport */
   /* position: relative; */
   /* min-height: 100vh; */
+  /* cursor: none; */
 }
 
 header {
@@ -183,7 +211,7 @@ h3 {
 /* Main section */
 main {
   height: 100vh;
-  padding: 0 30px 20px;
+  padding: 0 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;

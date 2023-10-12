@@ -47,3 +47,12 @@ btn.addEventListener("mouseout", () => {
   maneLower2.style.transform = "";
   frontChest.style.transform = "";
 });
+
+// Moon up effect
+const moon = document.querySelector(".moon");
+
+btn.addEventListener("mouseover", () => {
+  // moon.classList.add("moon-show");
+  moon.style.transform = "translateY(0)";
+  moon.style.transform = "scale(1)";
+});

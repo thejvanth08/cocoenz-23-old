@@ -15,17 +15,7 @@
   --wolf-mane: #8e8e8e;
   --howl-timing: 1s;
 }
-/* 
-add another bg gradient
 
-html {
-  background-color: var(--sky);
-  background: linear-gradient(
-    to bottom,
-    var(--sky-top) 0%,
-    var(--sky-bottom) 100%
-  );
-} */
 .hero {
   display: flex;
   align-items: center;
@@ -36,6 +26,7 @@ html {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  transform: scale(0.9);
 }
 .wolf *,
 .wolf *:before,
@@ -72,14 +63,24 @@ html {
 .moon {
   box-sizing: border-box;
   position: absolute;
-  bottom: 225px;
   overflow: hidden;
   width: var(--moon-size);
   height: var(--moon-size);
   border-radius: 50%;
   background-color: var(--moon);
   border-right: 6px solid var(--moon-crater-shadow);
+  /* for transition effect */
+  /* bottom: 225px; */
+  transform: translateY(300px) scale(0.8);
+  transition: transform 0.5s;
 }
+
+.moon-show {
+  transform: translateY(0);
+  transform: 1;
+  bottom: 225px;
+}
+
 .crater {
   opacity: 0.2;
   box-sizing: border-box;

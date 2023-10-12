@@ -129,7 +129,7 @@ new cursoreffects.snowflakeCursor({
 const config = {
   particles: {
     number: {
-      value: 600,
+      value: 300,
       density: {
         enable: true,
         value_area: 2441.9062623079944,
@@ -154,8 +154,8 @@ const config = {
       },
     },
     opacity: {
-      value: 0.33,
-      random: true,
+      value: 0.5,
+      // random: true,
       anim: {
         enable: false,
         speed: 1,
@@ -164,7 +164,7 @@ const config = {
       },
     },
     size: {
-      value: 7.877116975187079,
+      value: 6,
       random: true,
       anim: {
         enable: false,
@@ -184,7 +184,7 @@ const config = {
       enable: true,
       speed: 6,
       direction: "bottom",
-      random: false,
+      random: true,
       straight: false,
       out_mode: "out",
       bounce: false,
@@ -196,15 +196,15 @@ const config = {
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: "window",
     events: {
       onhover: {
         enable: true,
-        mode: "bubble",
+        mode: "repulse",
       },
       onclick: {
         enable: true,
-        mode: "repulse",
+        mode: "push",
       },
       resize: true,
     },
@@ -223,11 +223,11 @@ const config = {
         speed: 3,
       },
       repulse: {
-        distance: 200,
+        distance: 100,
         duration: 0.4,
       },
       push: {
-        particles_nb: 4,
+        particles_nb: 10,
       },
       remove: {
         particles_nb: 2,
@@ -240,3 +240,15 @@ const config = {
 document.addEventListener("DOMContentLoaded", function () {
   particlesJS("particles-js", config);
 });
+
+// For custom cursor pointer
+let cursors = document.querySelectorAll(".cursor-pointer");
+
+function mouseCursor(e) {
+  cursors.forEach((el) => {
+    el.style.top = e.clientY + "px";
+    el.style.left = e.clientX + "px";
+  });
+}
+
+window.addEventListener("mousemove", mouseCursor);
